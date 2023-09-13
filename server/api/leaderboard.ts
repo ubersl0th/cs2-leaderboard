@@ -10,7 +10,8 @@ export type Region =
   | "China"
   | "Europe"
   | "NorthAmerica"
-  | "SouthAmerica";
+  | "SouthAmerica"
+  | "World";
 export type Season = "season1";
 
 export interface LeaderboardOptions {
@@ -21,10 +22,10 @@ export interface LeaderboardOptions {
 export async function getLeaderboard(
   options?: LeaderboardOptions
 ): Promise<LeaderboardResult> {
-  const { season = "season1", region } = options || {};
+  const { season = "season1", region = "World" } = options || {};
   const url = new URL(leaderboard_url);
   url.searchParams.append("format", format);
-  region
+  region !== "World"
     ? url.searchParams.append("lbname", `${lbname}_${season}_${region}`)
     : url.searchParams.append("lbname", `${lbname}_${season}`);
 
