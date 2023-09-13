@@ -27,7 +27,7 @@ const { data, pending, error } = await useFetch(() => `/api/leaderboard?season=$
         <option value="SouthAmerica">South America</option>
       </select>
     </div>
-    <div v-if="pending">
+    <div v-if="pending" class="grid place-content-center p-6">
       <LoadingSpinner />
     </div>
     <p v-else-if="error" class="text-red-600">Error</p>
