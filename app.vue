@@ -12,10 +12,12 @@ const { data, pending, error } = await useFetch(() => `/api/leaderboard?season=$
   <div class="max-w-xl m-auto bg-neutral-500">
     <h1 class="text-xl text-white py-4"><b><i>LEADERBOARDS</i></b></h1>
     <div class="flex gap-3">
-      <select name="season" id="season" v-model="season" class="text-white p-2 bg-transparent border border-neutral-400 rounded-lg">
-          <option value="season1">Beta Season</option>
-        </select>
-      <select name="region" id="region" v-model="region" class="text-white p-2 bg-transparent border border-neutral-400 rounded-lg">
+      <select name="season" id="season" v-model="season"
+        class="text-white p-2 bg-neutral-500 border border-neutral-400 rounded-lg">
+        <option value="season1">Beta Season</option>
+      </select>
+      <select name="region" id="region" v-model="region"
+        class="text-white p-2 bg-neutral-500 border border-neutral-400 rounded-lg">
         <option value="World">World</option>
         <option value="Africa">Africa</option>
         <option value="Asia">Asia</option>
